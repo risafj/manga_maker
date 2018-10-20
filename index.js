@@ -3,9 +3,10 @@ var fs = require('fs');
 mangaNamesArray = fs.readdirSync('source')
 
 mangaNamesArray.forEach(function (err, index) {
+    mangaName = mangaNamesArray[index] 
     im.convert(
-        [`source/${mangaNamesArray[index]}/*.jpg`, '-format', 'pdf', `books/${mangaNamesArray[index]}.pdf`],
+        [`source/${mangaName}/*.jpg`, '-format', 'pdf', `books/${mangaName}.pdf`],
         function (err, output) {
-            console.log('PDF processed')}
+            console.log('Manga processed')}
     )
 })
